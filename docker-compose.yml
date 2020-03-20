@@ -1,0 +1,10 @@
+version: '3'
+services:
+  chappie-timeentry:
+    build: .
+    environment: []
+    ports:
+      - "8089:8089"
+    volumes:
+      - "./data:/chappie"
+    restart: unless-stopped
