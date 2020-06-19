@@ -132,7 +132,8 @@ public class AssignmentInfoService {
         + "Start_Date__c,"
         + "End_Date__c "
         + "FROM Assignment__c "
-        + "WHERE Provider__r.JDE_Number__c = '" + providerNumber + "'";
+        + "WHERE Provider__r.JDE_Number__c = '" + providerNumber + "' "
+        + "AND Pipeline_State__c = 'Active'";
     logger.debug("SOQL query " + assignmentSoql);
     List<AssignmentInfo> assignmentInfos = getDataFromSalesForce(assignmentSoql);
     if (CollectionUtils.isNotEmpty(assignmentInfos)) {
